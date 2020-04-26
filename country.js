@@ -13,7 +13,7 @@ $(function(){
         var selectedCountry = result[country];
         console.log(selectedCountry);
 
-        for(var i=0;i<selectedCountry.length;i++){
+        for( i = selectedCountry.length-1 ; i >= 0 ; i--){
            
             var row = `<tr>
             <th scope="row">${selectedCountry[i].date}</th>
@@ -25,8 +25,19 @@ $(function(){
           $("#data").append(row);
 
         }
+      var confirmed =  selectedCountry[selectedCountry.length-1].confirmed 
+        console.log(confirmed);
+        $("#Wconfirmed").append(confirmed);
+      var deaths =  selectedCountry[selectedCountry.length-1].deaths
+        console.log(deaths);
+        $("#Wdeaths").append(deaths);
+      var recovered=  selectedCountry[selectedCountry.length-1].recovered
+        console.log(recovered);
+        $("#Wrecovered").append(recovered);
+      var date = selectedCountry[selectedCountry.length-1].date
+        console.log(date);
+        $("#Wdate").append(date);
         
-
     });
 
 
